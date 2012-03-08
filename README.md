@@ -3,6 +3,8 @@
 This feature already exists in jekyll, enabling this feature in
 octopress is a trival task.
 
+See <http://jcftang.github.com/> for an example of its use, click into some of the posts to see.
+
 Firstly add this to your `_config.yml` file
 
     lsi: true
