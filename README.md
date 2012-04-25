@@ -25,6 +25,10 @@ The create a file such as `source/_includes/custom/asides/related.html` with the
 It is possible to style the list, but in the above I have chosen to keep
 the same style as the recent posts.
 
+Finally, add the file to your default asides list in your `_config.yml` file
+
+	default_asides: [custom/asides/related.html, ...]
+
 ## Probable issues with enabling LSI
 
 There are some issues with enabling LSI in jekyll/octopress, the primary
