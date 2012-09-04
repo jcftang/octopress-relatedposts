@@ -35,3 +35,30 @@ There are some issues with enabling LSI in jekyll/octopress, the primary
 issue will be performance. The default implementation will be slow if
 you have lots of posts to classify. It would be recommended that rb-gsl
 be installed to accelerate the classification process.
+
+### Errors when installing the rb-gsl gem
+```
+Building native extensions.  This could take a while...
+ERROR:  Error installing gsl:
+    ERROR: Failed to build gem native extension.
+
+...
+
+```
+
+The gsl gem requires gsl 1.14. Installing gsl using apt-get or brew will get you 1.15, which leads to another error when installing the rb-gsl gem.
+
+#### Linux fix
+```
+$ curl -O http://mirror.aarnet.edu.au/pub/gnu/gsl/gsl-1.14.tar.gz
+$ tar xfz gsl-1.14.tar.gz
+$ cd gsl-1.14
+$ ./configure
+$ make clean
+$ make								# can take a while, be patient
+$ sudo make install
+$ gem install gsl
+```
+
+#### OSX fix
+See http://bretthard.in/2012/03/getting-related_posts-lsi-and-gsl-to-work-in-jekyll/#.UEZRSLQgeoM
